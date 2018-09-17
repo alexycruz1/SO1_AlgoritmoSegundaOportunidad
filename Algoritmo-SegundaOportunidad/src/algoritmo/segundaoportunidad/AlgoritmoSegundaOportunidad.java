@@ -1,22 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package algoritmo.segundaoportunidad;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- *
- * @author alexycruz1
- */
+
 public class AlgoritmoSegundaOportunidad {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
@@ -33,15 +22,23 @@ public class AlgoritmoSegundaOportunidad {
         
         System.out.println("");
 
-        System.out.print("Ingrese paginas separadas por coma (ej: 1,2,3,4): ");
-        paginasIngresadas = sc.next();
-
-        String[] paginasParseadas = paginasIngresadas.split(",");
-        numPaginas = paginasParseadas.length;
-
-        for(int i = 0; i < paginasParseadas.length; i++) {
-            paginas.add(Integer.parseInt(paginasParseadas[i]));
+        System.out.print("Ingrese cantidad de paginas: ");
+        numPaginas = sc.nextInt();
+        
+        System.out.println("");
+        
+        for (int i = 0; i < numPaginas; i++) {
+            paginas.add((int)Math.floor(Math.random() * 20) + 1);
         }
+//        System.out.print("Ingrese paginas separadas por coma (ej: 1,2,3,4): ");
+//        paginasIngresadas = sc.next();
+
+//        String[] paginasParseadas = paginasIngresadas.split(",");
+//        numPaginas = paginasParseadas.length;
+//
+//        for(int i = 0; i < paginasParseadas.length; i++) {
+//            paginas.add(Integer.parseInt(paginasParseadas[i]));
+//        }
         
         paginasAccedidas.add(paginas.get(0));
         bitPaginas.add(1);
